@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap');
+
+.movi{
+    font-family: 'Passion One', cursive;
+    font-size: 40px;
+}
+
+.rack{
+    color: #9932cc;
+}
+
+.font{
+    font-family: 'Tiro Devanagari Sanskrit', serif;
+    font-size: 20px;
+    color: #fff !important;
+}
+
+.font:hover{
+    color: #9932cc !important;
+}
