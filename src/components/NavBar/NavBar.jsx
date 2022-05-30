@@ -1,6 +1,10 @@
+import CartWidget from '../CartWidet/CartWidget';
 import './navbar.css';
 
-const NavBar = () => {
+const NavBar = ({menu}) => {
+
+    const {link1,link2,link3} = menu;
+
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
@@ -18,22 +22,25 @@ const NavBar = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
                         
-                        <a className="navbar-brand" href="./">
+                        <a className="navbar-brand d-flex justify-content-center align-items-center" href="./">
                         {/* <img src="./assets/brand.png" alt="" width={'35'}/> */}
                         <p className='m-0 movi'>Movi<span className='rack'>Rack</span></p>
                         </a>
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
+                            {/* <li className="nav-item d-flex justify-content-center align-items-center">
                                 <a className="nav-link font" href="./">Inicio</a>
+                            </li> */}
+                            <li className="nav-item d-flex justify-content-center align-items-center">
+                                <a className="nav-link font" href="./">{link1}</a>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link font" href="./">Catálogo</a>
+                            <li className="nav-item d-flex justify-content-center align-items-center">
+                                <a className="nav-link font" href="./">{link2}</a>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link font" href="./">Sistema de gestión</a>
+                            <li className="nav-item d-flex justify-content-center align-items-center">
+                                <a className="nav-link font" href="./">{link3}</a>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link font" href="./">Contáctanos</a>
+                            <li className="nav-item d-flex justify-content-center align-items-center">
+                                <CartWidget />
                             </li>
                         </ul>
                     </div>

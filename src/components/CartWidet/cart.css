@@ -1,0 +1,23 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
+
+.cart_container{
+    width: 70px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: hsla(0, 0%, 95%, 0.241);
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.cart_container:hover{
+    background-color: hsla(0, 0%, 95%, 0.5);
+    transform: scale(1.1);
+}
+
+.bi-cart{
+    font-size: 30px;
+    color: #ffffff;
+}
