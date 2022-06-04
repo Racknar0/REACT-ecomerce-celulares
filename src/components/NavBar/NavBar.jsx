@@ -1,7 +1,7 @@
 import CartWidget from '../CartWidet/CartWidget';
 import './navbar.css';
 
-const NavBar = ({menu}) => {
+const NavBar = ({menu, cantidadCarrrito}) => {
 
     const {link1,link2,link3} = menu;
 
@@ -40,7 +40,7 @@ const NavBar = ({menu}) => {
                                 <a className="nav-link font" href="./">{link3}</a>
                             </li>
                             <li className="nav-item d-flex justify-content-center align-items-center">
-                                <CartWidget />
+                                <CartWidget cantidadCarrrito={cantidadCarrrito} />
                             </li>
                         </ul>
                     </div>
