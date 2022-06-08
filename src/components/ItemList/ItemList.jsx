@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Item from '../Item/Item';
 
-const objetos = [
+const objets = [
     {
         nombre: 'Samsung Galaxy S22',
         descripcion:
@@ -85,13 +85,43 @@ const objetos = [
 ];
 
 const ItemList = () => {
+    const [objetos, setObjetos] = useState({});
+    const [cargando, setCargando] = useState(true);
+
+    /*     useEffect(() => {
+        fetch('')
+            .then((response) => response.json())
+            .then((data) => {
+                setTimeout(() => {
+                    setObjetos(data);
+                    setCargando(false);
+                }, 2000);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []); */
+
+    const promesa = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(objets);
+        }, 2000);
+    });
+
+    useEffect(() => {
+        promesa.then((data) => {
+            setObjetos(data);
+            setCargando(false);
+        });
+    }, []);
+
     return (
-        <div className='d-flex justify-content-center gap-5 row'>
-            {objetos.map((objeto, index) => {
-                return (
-                    <Item key={index} objeto={objeto} />
-                );
-            })}
+        <div className="d-flex justify-content-center gap-5 row">
+            {cargando === true
+                ? 'Cargando...'
+                : objetos.map((objeto, index) => {
+                      return <Item key={index} objeto={objeto} />;
+                  })}
         </div>
     );
 };
