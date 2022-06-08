@@ -18,7 +18,7 @@ const ItemCount = ({stock, initial, setCantidadCarrrito}) => {
     }
 
     const Disminuir = () => {
-        if (count > 0) {
+        if (count > 1) {
             setCount(count - 1);
         }
     }
@@ -32,15 +32,15 @@ const ItemCount = ({stock, initial, setCantidadCarrrito}) => {
 
     return (
         <div className="contenedor_I-Count">
-            <div>
+            {/* <div>
                 <p className='text-center'>Camisa Tigger</p>
-            </div>
-            <div className='d-flex flex-column justify-content-center align-items-center'>
-                <div className="d-flex bg-white mx-5 justify-content-center">
+            </div> */}
+            <div className='d-flex flex-column justify-content-center align-items-center mt-2'>
+                <div className="d-flex bg-white contenedor_counter justify-content-center">
                     <div className="d-flex">
-                        <button className="btn btn-primary mr-5" onClick={Disminuir}> - </button>
-                        <input className="input_cart form-control my-1 mx-3" type="text" value={count} readOnly />
-                        <button className="btn btn-primary" onClick={Aumentar}> + </button>
+                    <div className='contenedor_boton_control'><button className="botones_control mr-5" onClick={Disminuir}> - </button></div>
+                        <input className="input_cart form-control" type="text" value={count} readOnly />
+                        <div className='contenedor_boton_control'><button className="botones_control" onClick={Aumentar}> + </button></div>
                     </div>
 
                 </div>
