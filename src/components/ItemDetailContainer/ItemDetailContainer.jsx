@@ -17,11 +17,12 @@ const ItemDetailContainer = () => {
                     setCargando(false);
                 }, 2000);
             });
+            
     }, []);
 
   return (
     <div>
-        <ItemDetail objetos={objetos} cargando={cargando} />
+        {cargando === true ? <p className='text-center'>'Cargando...'</p> : <ItemDetail objetos={objetos} />}
     </div>
   )
 }
