@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 
-const Item = ({objeto, index, setCantidadCarrrito}) => {
+const Item = ({objeto, index, setCantidadCarrrito, setItemSelected}) => {
 
-    /* console.log(objeto); */
+
+
+
+
+    const handleClick = () => {
+        setItemSelected(objeto);
+        //console.log(objeto);
+    }
+
 
     return (
         <div key={index} className="card col-12 col-md-4" style={{ width: '18rem' }}>
@@ -13,9 +21,9 @@ const Item = ({objeto, index, setCantidadCarrrito}) => {
                 <p className="card-text">{objeto.descripcion}</p>
                 <h5>Precio: {objeto.precio}</h5>
                 <h5>Stock: {objeto.stock}</h5>
-                <a href="./" className="btn btn-primary">
+                <button onClick={handleClick} className="btn btn-primary">
                     Ver detalles del producto
-                </a>
+                </button>
                 <ItemCount stock={objeto.stock} initial={1} setCantidadCarrrito={setCantidadCarrrito} />
             </div>
         </div>

@@ -17,6 +17,10 @@ const greeting = 'Mi tienda de telefonos celulares'
 
 const App = () => {
 
+  /* ITEM SELECCIONADO */
+  const [itemSelected, setItemSelected] = useState({});
+  console.log(itemSelected);
+
   const [cantidadCarrrito, setCantidadCarrrito] = useState(0)
   const [totalCarrrito, setTotalCarrrito] = useState(0);
 
@@ -29,7 +33,7 @@ const App = () => {
   return (
     <>
       <NavBar menu={menu} cantidadCarrrito={totalCarrrito} />
-      <ItemListContainer greeting={greeting} setCantidadCarrrito={setCantidadCarrrito} />
+      <ItemListContainer greeting={greeting} setCantidadCarrrito={setCantidadCarrrito} setItemSelected={setItemSelected}/>
       <ItemDetailContainer />
     </>
   )

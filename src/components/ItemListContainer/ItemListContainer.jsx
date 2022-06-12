@@ -4,7 +4,7 @@ import ItemList from '../ItemList/ItemList';
 
 
 
-const ItemListContainer = ({ greeting, setCantidadCarrrito }) => {
+const ItemListContainer = ({ greeting, setCantidadCarrrito, setItemSelected }) => {
     const [objetos, setObjetos] = useState({});
     const [cargando, setCargando] = useState(true);
 
@@ -28,7 +28,7 @@ const ItemListContainer = ({ greeting, setCantidadCarrrito }) => {
             <h1 className="mt-5 mb-4">
                 Listado de Articulos en nuestras tiendas
             </h1>
-            <ItemList objetos={objetos} cargando={cargando} setCantidadCarrrito={setCantidadCarrrito} />
+            <ItemList objetos={objetos} cargando={cargando} setCantidadCarrrito={setCantidadCarrrito} setItemSelected={setItemSelected} />
         </div>
     );
 };
