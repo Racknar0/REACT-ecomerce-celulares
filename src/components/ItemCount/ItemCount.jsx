@@ -6,10 +6,11 @@ const ItemCount = ({stock, initial, setCantidadCarrrito}) => {
     const [count, setCount] = useState(1);
 
     useEffect(() => {
-        if (initial > 1) {
-            setCount(initial);
-        }
-    }, []);
+
+        initial > 1 ? setCount(initial) : setCount(1);
+        initial >= stock ? setCount(stock) : setCount(initial);
+        
+    }, [ initial, stock ]);
 
     const Aumentar = () => {
         if (count < stock) {
@@ -26,7 +27,7 @@ const ItemCount = ({stock, initial, setCantidadCarrrito}) => {
 
     const handleAddCarrito = () => {
         setCantidadCarrrito(count);
-        console.log(count);
+        //console.log(count);
     }
 
 

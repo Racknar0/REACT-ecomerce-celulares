@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import './cart.css'
 
 const CartWidget = ({cantidadCarrrito}) => {
+
   return (
     <div className='ms-4 me-4 cart_container'>
         <div className='d-flex justify-content-center align-items-center'>

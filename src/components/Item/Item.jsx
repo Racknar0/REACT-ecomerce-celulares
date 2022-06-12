@@ -1,7 +1,10 @@
 import React from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 
-const Item = ({objeto, index}) => {
+const Item = ({objeto, index, setCantidadCarrrito}) => {
+
+    /* console.log(objeto); */
+
     return (
         <div key={index} className="card col-12 col-md-4" style={{ width: '18rem' }}>
             <img src={objeto.imagen} className="card-img-top" alt="..." />
@@ -13,7 +16,7 @@ const Item = ({objeto, index}) => {
                 <a href="./" className="btn btn-primary">
                     Ver detalles del producto
                 </a>
-                <ItemCount objeto={objeto} />
+                <ItemCount stock={objeto.stock} initial={1} setCantidadCarrrito={setCantidadCarrrito} />
             </div>
         </div>
     );

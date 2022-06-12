@@ -1,9 +1,9 @@
+import { useEffect, useState } from 'react';
 import CartWidget from '../CartWidet/CartWidget';
 import './navbar.css';
 
-const NavBar = ({menu, cantidadCarrrito}) => {
-
-    const {link1,link2,link3} = menu;
+const NavBar = ({ menu, cantidadCarrrito }) => {
+    const { link1, link2, link3 } = menu;
 
     return (
         <>
@@ -20,24 +20,37 @@ const NavBar = ({menu, cantidadCarrrito}) => {
                     >
                         <span className="navbar-toggler-icon" />
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        
-                        <a className="navbar-brand d-flex justify-content-center align-items-center" href="./">
-                        {/* <img src="./assets/brand.png" alt="" width={'35'}/> */}
-                        <p className='m-0 movi'>Movi<span className='rack'>Rack</span></p>
+                    <div
+                        className="collapse navbar-collapse"
+                        id="navbarTogglerDemo01"
+                    >
+                        <a
+                            className="navbar-brand d-flex justify-content-center align-items-center"
+                            href="./"
+                        >
+                            {/* <img src="./assets/brand.png" alt="" width={'35'}/> */}
+                            <p className="m-0 movi">
+                                Movi<span className="rack">Rack</span>
+                            </p>
                         </a>
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             {/* <li className="nav-item d-flex justify-content-center align-items-center">
                                 <a className="nav-link font" href="./">Inicio</a>
                             </li> */}
                             <li className="nav-item d-flex justify-content-center align-items-center">
-                                <a className="nav-link font" href="./">{link1}</a>
+                                <a className="nav-link font" href="./">
+                                    {link1}
+                                </a>
                             </li>
                             <li className="nav-item d-flex justify-content-center align-items-center">
-                                <a className="nav-link font" href="./">{link2}</a>
+                                <a className="nav-link font" href="./">
+                                    {link2}
+                                </a>
                             </li>
                             <li className="nav-item d-flex justify-content-center align-items-center">
-                                <a className="nav-link font" href="./">{link3}</a>
+                                <a className="nav-link font" href="./">
+                                    {link3}
+                                </a>
                             </li>
                             <li className="nav-item d-flex justify-content-center align-items-center">
                                 <CartWidget cantidadCarrrito={cantidadCarrrito} />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import NavBar from './components/NavBar/NavBar'
 
@@ -17,10 +17,17 @@ const greeting = 'Mi tienda de telefonos celulares'
 const App = () => {
 
   const [cantidadCarrrito, setCantidadCarrrito] = useState(0)
+  const [totalCarrrito, setTotalCarrrito] = useState(0);
+
+
+  useEffect(() => {
+      setTotalCarrrito(cantidadCarrrito + totalCarrrito);
+  }, [cantidadCarrrito]);// eslint-disable-line react-hooks/exhaustive-deps
+
 
   return (
     <>
-      <NavBar menu={menu} cantidadCarrrito={cantidadCarrrito} />
+      <NavBar menu={menu} cantidadCarrrito={totalCarrrito} />
       <ItemListContainer greeting={greeting} setCantidadCarrrito={setCantidadCarrrito} />
     </>
   )
