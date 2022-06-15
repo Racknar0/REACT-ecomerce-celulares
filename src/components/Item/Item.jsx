@@ -1,17 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
 
 const Item = ({objeto, index, setCantidadCarrrito, setItemSelected}) => {
-
-
-
-
-
-    const handleClick = () => {
-        setItemSelected(objeto);
-        //console.log(objeto);
-    }
-
 
     return (
         <div key={index} className="card col-12 col-md-4" style={{ width: '18rem' }}>
@@ -21,10 +12,13 @@ const Item = ({objeto, index, setCantidadCarrrito, setItemSelected}) => {
                 <p className="card-text">{objeto.descripcion}</p>
                 <h5>Precio: {objeto.precio}</h5>
                 <h5>Stock: {objeto.stock}</h5>
-                <button onClick={handleClick} className="btn btn-primary">
-                    Ver detalles del producto
-                </button>
-                <ItemCount stock={objeto.stock} initial={1} setCantidadCarrrito={setCantidadCarrrito} />
+                <Link to={`../detalles/${objeto.id}`}  className="btn btn-primary" replace>
+                    <button className="btn btn-primary">
+                        Ver detalles del producto
+                    </button>
+                </Link>
+
+                {/* <ItemCount stock={objeto.stock} initial={1} setCantidadCarrrito={setCantidadCarrrito} /> */}
             </div>
         </div>
     );

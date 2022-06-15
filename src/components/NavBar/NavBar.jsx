@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import CartWidget from '../CartWidet/CartWidget';
 import './navbar.css';
 
@@ -24,36 +25,46 @@ const NavBar = ({ menu, cantidadCarrrito }) => {
                         className="collapse navbar-collapse"
                         id="navbarTogglerDemo01"
                     >
-                        <a
-                            className="navbar-brand d-flex justify-content-center align-items-center"
-                            href="./"
-                        >
-                            {/* <img src="./assets/brand.png" alt="" width={'35'}/> */}
+                        <Link className="navbar-brand d-flex justify-content-center align-items-center" to="/">
                             <p className="m-0 movi">
                                 Movi<span className="rack">Rack</span>
                             </p>
-                        </a>
+                        </Link>
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                            {/* <li className="nav-item d-flex justify-content-center align-items-center">
-                                <a className="nav-link font" href="./">Inicio</a>
-                            </li> */}
                             <li className="nav-item d-flex justify-content-center align-items-center">
-                                <a className="nav-link font" href="./">
+                                <NavLink className={ ({isActive}) =>  isActive ? 'claseActive' : 'claseNoActive'} to="/">
                                     {link1}
-                                </a>
+                                </NavLink>
                             </li>
                             <li className="nav-item d-flex justify-content-center align-items-center">
-                                <a className="nav-link font" href="./">
+                                <div className="dropdown">
+                                    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Categorias
+                                    </button>
+                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><Link className='dropdown-item' to="/categoria/samsung">Samsung</Link></li>
+                                        <li><Link className='dropdown-item' to="/categoria/xiaomi">Xiaomi</Link></li>
+                                        <li><Link className='dropdown-item' to="/categoria/apple">Apple</Link></li>
+                                        <li><Link className='dropdown-item' to="/categoria/motorola">Motorola</Link></li>
+                                        <li><Link className='dropdown-item' to="/categoria/oppo">Oppo</Link></li>
+                                        <li><Link className='dropdown-item' to="/categoria/vivo">Vivo</Link></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li className="nav-item d-flex justify-content-center align-items-center">
+                                <NavLink className={ ({isActive}) =>  isActive ? 'claseActive' : 'claseNoActive'} to="/gestion">
                                     {link2}
-                                </a>
+                                </NavLink>
                             </li>
                             <li className="nav-item d-flex justify-content-center align-items-center">
-                                <a className="nav-link font" href="./">
+                                <NavLink className={ ({isActive}) =>  isActive ? 'claseActive' : 'claseNoActive'} to="/contacto" >
                                     {link3}
-                                </a>
+                                </NavLink>
                             </li>
                             <li className="nav-item d-flex justify-content-center align-items-center">
-                                <CartWidget cantidadCarrrito={cantidadCarrrito} />
+                                <NavLink to="/cart" >
+                                    <CartWidget cantidadCarrrito={cantidadCarrrito} />
+                                </NavLink>
                             </li>
                         </ul>
                     </div>

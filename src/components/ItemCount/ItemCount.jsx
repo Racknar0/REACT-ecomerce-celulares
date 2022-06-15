@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './itemCount.css';
 
-const ItemCount = ({stock, initial, setCantidadCarrrito}) => {
+const ItemCount = ({ setCantidadCarrrito}) => {
 
     const [count, setCount] = useState(1);
+    const stock = 5;
+    const initial = 2;
 
     useEffect(() => {
 
