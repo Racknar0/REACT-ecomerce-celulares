@@ -22,7 +22,7 @@ const ItemDetail = ({objeto, setCantidadCarrrito}) => {
   }
 
   const navigateCarrito = () => {
-      navigate("../cart", { replace: true })
+      navigate("../cart")
   }
 
 
