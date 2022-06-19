@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css'
 
 const ItemDetail = ({objeto, setCantidadCarrrito}) => {
+
+  let navigate = useNavigate();
     const {nombre, descripcion, imagen, precio, stock} = objeto;
    /*  console.log(objeto.objeto); */
 
@@ -10,6 +13,20 @@ const ItemDetail = ({objeto, setCantidadCarrrito}) => {
     setTimeout(() => {
         setCargando(false);
     }, 1000);
+
+
+    const [isComprando, setIsComprando] = useState(true);
+
+  const comprando = () => {
+      setIsComprando(!isComprando);
+  }
+
+  const navigateCarrito = () => {
+      navigate("../cart", { replace: true })
+  }
+
+
+  
 
   return (
     <div>
@@ -23,7 +40,18 @@ const ItemDetail = ({objeto, setCantidadCarrrito}) => {
                 <p><span className='descripcion'>Descripcion:</span> {descripcion}</p>
                 <p><span className='descripcion'>Precio:</span> {precio}</p>
                 <p><span className='descripcion'>Stock:</span> {stock}</p>
-                <ItemCount stock={objeto.stock} initial={1} setCantidadCarrrito={setCantidadCarrrito} /> 
+
+
+                {
+                  isComprando ? <ItemCount stock={objeto.stock} initial={1} setCantidadCarrrito={setCantidadCarrrito} comprando={comprando}/> 
+                : 
+                  <div className='d-flex'>
+                          <button onClick={comprando} className='btn btn-primary mt-2 mx-1' >Comprar Más</button>
+                          <button onClick={navigateCarrito} className='btn btn-primary mt-2 mx-1' >Ir Al Carrito</button>
+                  </div>}
+
+                
+
             </div>   
              
         </div>

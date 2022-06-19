@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import Cart from './components/Cart/Cart';
 import ItemCount from './components/ItemCount/ItemCount';
 
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
@@ -48,7 +49,7 @@ const App = () => {
         <Route path="/detalles/:id" element={<ItemDetailContainer objeto={itemSelected} setCantidadCarrrito={setCantidadCarrrito} />} />
         <Route path="/gestion" element={<div><h1>gestion</h1></div>} />
         <Route path="/contacto" element={<div><h1>contacto</h1></div>} />
-        <Route path="/cart" element={<ItemCount />} />
+        <Route path="/cart" element={<Cart />} />
 
         <Route path="*" element={<div><h1>La pagina no existe</h1></div>} />
       </Routes>
