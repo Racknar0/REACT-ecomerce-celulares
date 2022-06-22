@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './itemCount.css';
 
-const ItemCount = ({ setCantidadCarrrito, comprando}) => {
+const ItemCount = ({ setCantidadCarrrito, comprando, count, setCount, onAdd, stock}) => {
 
-    const [count, setCount] = useState(1);
-    const stock = 5;
-    const initial = 2;
+    
+
+    const initial = 1;
 
     useEffect(() => {
 
@@ -30,6 +30,7 @@ const ItemCount = ({ setCantidadCarrrito, comprando}) => {
     const handleAddCarrito = () => {
         setCantidadCarrrito(count);
         comprando();
+        onAdd()
         //console.log(count);
     }
 

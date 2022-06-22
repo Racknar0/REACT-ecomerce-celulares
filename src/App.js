@@ -5,6 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import Cart from './components/Cart/Cart';
+import {CartContextProvider } from './components/contexts/CartContext';
 import ItemCount from './components/ItemCount/ItemCount';
 
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
@@ -34,27 +35,30 @@ const App = () => {
       setTotalCarrrito(cantidadCarrrito + totalCarrrito);
   }, [cantidadCarrrito]);// eslint-disable-line react-hooks/exhaustive-deps
 
+  
 
   return (
 
 
-    <>
-    <BrowserRouter>
-      <NavBar menu={menu} cantidadCarrrito={totalCarrrito} />
-      <Routes>
-        <Route path="/" element={<ItemListContainer setCantidadCarrrito={setCantidadCarrrito} setItemSelected={setItemSelected}/>} />
-        <Route path="/categoria/:categoriaId" element={<ItemListContainer/>} />
+
+    <CartContextProvider>
+      <BrowserRouter>
+        <NavBar menu={menu} cantidadCarrrito={totalCarrrito} />
+        <Routes>
+          <Route path="/" element={<ItemListContainer setCantidadCarrrito={setCantidadCarrrito} setItemSelected={setItemSelected}/>} />
+          <Route path="/categoria/:categoriaId" element={<ItemListContainer/>} />
 
 
-        <Route path="/detalles/:id" element={<ItemDetailContainer objeto={itemSelected} setCantidadCarrrito={setCantidadCarrrito} />} />
-        <Route path="/gestion" element={<div><h1>gestion</h1></div>} />
-        <Route path="/contacto" element={<div><h1>contacto</h1></div>} />
-        <Route path="/cart" element={<Cart />} />
+          <Route path="/detalles/:id" element={<ItemDetailContainer objeto={itemSelected} setCantidadCarrrito={setCantidadCarrrito} />} />
+          <Route path="/gestion" element={<div><h1>gestion</h1></div>} />
+          <Route path="/contacto" element={<div><h1>contacto</h1></div>} />
+          <Route path="/cart" element={<Cart />} />
 
-        <Route path="*" element={<div><h1>La pagina no existe</h1></div>} />
-      </Routes>
-    </BrowserRouter>
-    </>
+          <Route path="*" element={<div><h1>La pagina no existe</h1></div>} />
+        </Routes>
+      </BrowserRouter>
+    </CartContextProvider>
+
   )
 }
 

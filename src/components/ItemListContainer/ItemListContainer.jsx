@@ -11,7 +11,7 @@ const ItemListContainer = ({ setCantidadCarrrito, setItemSelected }) => {
 
 
     const { categoriaId } = useParams();
-    console.log(categoriaId);
+    //console.log(categoriaId);
 
     
 
@@ -25,7 +25,7 @@ const ItemListContainer = ({ setCantidadCarrrito, setItemSelected }) => {
                 setTimeout(() => {
                     setObjetos(resp.filter(objeto => objeto.categoria === categoriaId));
                     setCargando(false); 
-                }, 2000);
+                }, 500);
             }); 
 
         } else {
@@ -35,7 +35,7 @@ const ItemListContainer = ({ setCantidadCarrrito, setItemSelected }) => {
                 setTimeout(() => {
                     setObjetos(resp);
                     setCargando(false);
-                }, 2000);
+                }, 500);
             });
         }
 
@@ -44,7 +44,7 @@ const ItemListContainer = ({ setCantidadCarrrito, setItemSelected }) => {
     }, [categoriaId]);// eslint-disable-line react-hooks/exhaustive-deps
 
 
-    console.log(objetos);
+    //console.log(objetos);
 
 
     return (

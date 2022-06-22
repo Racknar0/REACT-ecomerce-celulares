@@ -8,7 +8,7 @@ const ItemDetailContainer = ({setCantidadCarrrito}) => {
     const [cargando, setCargando] = useState(true);
 
     const{id} = useParams();
-    console.log(id);
+    //console.log(id);
     
     useEffect(() => {
         if (id) {
@@ -19,7 +19,7 @@ const ItemDetailContainer = ({setCantidadCarrrito}) => {
                 setTimeout(() => {
                     setObjeto(...resp.filter(objeto => objeto.id === id));
                     setCargando(false);
-                }, 2000);
+                }, 500);
             });
 
         } else {
@@ -29,12 +29,12 @@ const ItemDetailContainer = ({setCantidadCarrrito}) => {
                 setTimeout(() => {
                     setObjeto(resp);
                     setCargando(false);
-                }, 2000);
+                }, 500);
             });
         }
     }, [id]);
 
-    console.log(objeto);
+    //console.log(objeto);
   return (
     <div>
         {cargando === true ? <p className='text-center'>'Cargando...'</p> : <ItemDetail objeto={objeto} setCantidadCarrrito={setCantidadCarrrito} />}
