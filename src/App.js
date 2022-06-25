@@ -12,7 +12,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import NavBar from './components/NavBar/NavBar'
 
-
+import "./App.css"
 
 const menu = {
   link1: 'Catálogo',

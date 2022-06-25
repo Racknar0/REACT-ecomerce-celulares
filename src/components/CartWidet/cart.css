@@ -7,7 +7,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: hsla(0, 0%, 95%, 0.241);
+    background-color: hsl(0, 0%, 100%);
     border-radius: 10%;
     cursor: pointer;
 }
@@ -19,5 +19,9 @@
 
 .bi-cart{
     font-size: 30px;
-    color: #ffffff;
+    color: #000000;
+}
+.bi-cart-x{
+    font-size: 30px;
+    color: #000000;
 }

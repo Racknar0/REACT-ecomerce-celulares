@@ -43,14 +43,14 @@ const ItemCount = ({ setCantidadCarrrito, comprando, count, setCount, onAdd, sto
             <div className='d-flex flex-column justify-content-center align-items-center mt-2'>
                 <div className="d-flex bg-white contenedor_counter justify-content-center">
                     <div className="d-flex">
-                    <div className='contenedor_boton_control'><button className="botones_control mr-5" onClick={Disminuir}> - </button></div>
+                    <div className='contenedor_boton_control'><button className="botones_control mr-5 text-white fw-bold" onClick={Disminuir}> - </button></div>
                         <input className="input_cart form-control" type="text" value={count} readOnly />
-                        <div className='contenedor_boton_control'><button className="botones_control" onClick={Aumentar}> + </button></div>
+                        <div className='contenedor_boton_control'><button className="botones_control text-white fw-bold" onClick={Aumentar}> + </button></div>
                     </div>
 
                 </div>
                 <div>
-                    <button className='btn btn-primary mt-2' onClick={handleAddCarrito}>Agregar Al Carrito</button>
+                    <button className='btn mt-2 text-white fw-bold' onClick={handleAddCarrito}>Agregar Al Carrito</button>
                 </div>
             </div>
         </div>

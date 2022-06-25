@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 //import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../ItemList/ItemList';
-
+import { Roller } from 'react-awesome-spinners'
 
 
 const ItemListContainer = ({ setCantidadCarrrito, setItemSelected }) => {
@@ -25,17 +25,18 @@ const ItemListContainer = ({ setCantidadCarrrito, setItemSelected }) => {
                 setTimeout(() => {
                     setObjetos(resp.filter(objeto => objeto.categoria === categoriaId));
                     setCargando(false); 
-                }, 500);
+                }, 2000);
             }); 
 
         } else {
+
             fetch('/data/data.json')
             .then((resp) => resp.json())
             .then((resp) => {
                 setTimeout(() => {
                     setObjetos(resp);
                     setCargando(false);
-                }, 500);
+                }, 2000);
             });
         }
 
@@ -49,12 +50,16 @@ const ItemListContainer = ({ setCantidadCarrrito, setItemSelected }) => {
 
     return (
         <div className="d-flex justify-content-center align-items-center flex-column">
-            {/* <ItemCount setCantidadCarrrito={setCantidadCarrrito} stock={10} initial={2} />
-      <br /> */}
-            <h1 className="mt-5 mb-4">
+            <h1 className="mt-5 mb-4 text-white">
                 Listado de Articulos en nuestras tiendas
             </h1>
-            {cargando === true ? <p className='text-center'>'Cargando...'</p> : <ItemList objetos={objetos} cargando={cargando} setCantidadCarrrito={setCantidadCarrrito} setItemSelected={setItemSelected} />}
+            {cargando === true ? 
+            
+            <Roller color={'#9932cc'}/>
+            
+            : 
+            
+            <ItemList objetos={objetos} cargando={cargando} setCantidadCarrrito={setCantidadCarrrito} setItemSelected={setItemSelected} />}
             { objetos.length === 0 ? <p className='text-center'>'No hay articulos'</p> : null}
         </div>
     );

@@ -8,7 +8,7 @@ const NavBar = ({ menu, cantidadCarrrito }) => {
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
+            <nav className="navbar navbar-expand-lg navbar-dark navbarMain ">
                 <div className="container-fluid">
                     <button
                         className="navbar-toggler"
@@ -62,9 +62,9 @@ const NavBar = ({ menu, cantidadCarrrito }) => {
                                 </NavLink>
                             </li>
                             <li className="nav-item d-flex justify-content-center align-items-center">
-                                <NavLink to="/cart" >
+                                <Link to="/cart" >
                                     <CartWidget cantidadCarrrito={cantidadCarrrito} />
-                                </NavLink>
+                                </Link>
                             </li>
                         </ul>
                     </div>

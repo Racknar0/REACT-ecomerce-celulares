@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import { Roller } from 'react-awesome-spinners'
 
 const ItemDetailContainer = ({setCantidadCarrrito}) => {
 
@@ -19,7 +20,7 @@ const ItemDetailContainer = ({setCantidadCarrrito}) => {
                 setTimeout(() => {
                     setObjeto(...resp.filter(objeto => objeto.id === id));
                     setCargando(false);
-                }, 500);
+                }, 2000);
             });
 
         } else {
@@ -29,16 +30,22 @@ const ItemDetailContainer = ({setCantidadCarrrito}) => {
                 setTimeout(() => {
                     setObjeto(resp);
                     setCargando(false);
-                }, 500);
+                }, 2000);
             });
         }
     }, [id]);
 
     //console.log(objeto);
   return (
-    <div>
-        {cargando === true ? <p className='text-center'>'Cargando...'</p> : <ItemDetail objeto={objeto} setCantidadCarrrito={setCantidadCarrrito} />}
-       {/*  {cargando === true ? <p className='text-center'>'Cargando...'</p> : <ItemDetail objeto={objeto} />} */}
+    <div className='d-flex flex-column align-items-center'>
+        {cargando === true ? 
+        
+        <Roller color={'#9932cc'}/>
+        
+        : 
+        
+        <ItemDetail objeto={objeto} setCantidadCarrrito={setCantidadCarrrito} />}
+    
     </div>
   )
 }

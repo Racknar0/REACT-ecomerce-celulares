@@ -2,8 +2,13 @@ import React, { useState } from 'react'
 import { useContext } from 'react';
 import { useNavigate } from "react-router-dom";
 import { CartContext } from '../contexts/CartContext';
+
+import { Roller } from 'react-awesome-spinners'
+
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css'
+
+
 
 const ItemDetail = ({ objeto, setCantidadCarrrito }) => {
     let navigate = useNavigate();
@@ -41,13 +46,18 @@ const ItemDetail = ({ objeto, setCantidadCarrrito }) => {
 
 
     return (
-        <div>
-            <h1 className="text-center mt-5">Detalle del producto</h1>
-            {cargando === true ? (
-                <p className="text-center">'Cargando...'</p>
-            ) : (
+        <div className='d-flex flex-column align-items-center'>
+            <h1 className="text-center mt-5 text-white">Detalles del producto</h1>
+            {cargando === true ? 
+            (
+                <Roller color={'#9932cc'}/>
+            ) 
+            
+            : 
+            
+            (
                 <div className="d-flex justify-content-center gap-5 row">
-                    <div className="col-md-6 d-flex flex-column align-items-center bordes-card">
+                    <div className="col-md-6 d-flex flex-column align-items-center bordes-card tajeta">
                         <h2>{nombre}</h2>
                         <img
                             src={`${imagen}`}
@@ -80,13 +90,13 @@ const ItemDetail = ({ objeto, setCantidadCarrrito }) => {
                             <div className="d-flex">
                                 <button
                                     onClick={comprando}
-                                    className="btn btn-primary mt-2 mx-1"
+                                    className="btn mt-2 mx-1"
                                 >
                                     Comprar Más
                                 </button>
                                 <button
                                     onClick={navigateCarrito}
-                                    className="btn btn-primary mt-2 mx-1"
+                                    className="btn mt-2 mx-1"
                                 >
                                     Ir Al Carrito
                                 </button>

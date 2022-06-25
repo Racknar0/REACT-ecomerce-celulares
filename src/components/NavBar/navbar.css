@@ -3,7 +3,7 @@
 
 .movi{
     font-family: 'Passion One', cursive;
-    font-size: 40px;
+    font-size: 50px;
 }
 
 .rack{
@@ -23,7 +23,7 @@
 }
 
 .claseActive{
-    font-family: 'Tiro Devanagari Sanskrit', serif;
+   
     text-decoration: none;
     font-size: 25px;
     color: #9932cc !important;
@@ -35,10 +35,17 @@
 }
 
 .dropdown-toggle{
-    font-family: 'Tiro Devanagari Sanskrit', serif;
+    
     font-size: 25px;
     text-decoration: none;
     color: rgb(255, 255, 255) !important;
     margin-right: 1rem;
     background-color: #9932cc;
+}
+
+.navbarMain{
+    background-color: #000000;
+    border-radius: 3px;
+    padding: 15px 0px;
+    border: 2px solid #9932cc;
 }
