@@ -1,20 +1,17 @@
 
-# Proyecto E-Comer React - Coder
+# Proyecto E-Comer React
 
-Proyecto desarrollado bajo react para el curso de CoderHouse
+Proyecto desarrollado bajo react
 
 
-
+# Deployment del proyecto
+ 
+ - [Deployment](https://ecommerce-cels.netlify.app/)
 
 
 ## Authors
 
 - [@JonathanTorres](https://github.com/Racknar0)
-
-
-# Proyecto E-Comer React - Coder
-
-Proyecto desarrollado bajo react para el curso de CoderHouse
 
 
 ## Installation
