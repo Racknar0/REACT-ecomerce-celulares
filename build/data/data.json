@@ -1,0 +1,92 @@
+[
+    {
+        "id": "1",
+        "nombre": "Samsung Galaxy S22",
+        "categoria": "samsung",
+        "descripcion": "Los biseles delgados fluyen en un marco pulido y simétrico para una pantalla amplia y equilibrada.",
+        "precio": "3800000",
+        "stock": "10",
+        "imagen": "/img/cels/samsung-galaxy-s22-1.png"
+    },
+    {
+        "id": "2",
+        "nombre": "iPhone 13",
+        "categoria": "apple",
+        "descripcion": "Una pantalla Super Retina XDR con ProMotion que ofrece una experiencia rápida y fluida.",
+        "precio": "3800000",
+        "stock": 5,
+        "imagen": "/img/cels/iPhone-13.png"
+    },
+    {
+        "id": "3",
+        "nombre": "Motorola Moto G100",
+        "categoria": "motorola",
+        "descripcion": "Con una pantalla full HD+ de 6.7 pulgadas con tasa de refresco de 90Hz, el Moto G100 utiliza un procesador Snapdragon 870.",
+        "precio": "2067000",
+        "stock": "11",
+        "imagen": "/img/cels/Motorola-Moto-G100.png"
+    },
+    {
+        "id": "4",
+        "nombre": "OPPO Reno 6 5G",
+        "categoria": "oppo",
+        "descripcion": "smartphone potente con buena calidad en la cámara y con un gran almacenamiento interno para los que guardan todo tipo de fotos, vídeos o aplicaciones.",
+        "precio": "1667000",
+        "stock": "3",
+        "imagen": "/img/cels/OPPO-Reno-6-5G.png"
+    },
+    {
+        "id": "5",
+        "nombre": "Samsung Galaxy A52s",
+        "categoria": "samsung",
+        "descripcion": "smartphone potente con buena calidad en la cámara y con un gran almacenamiento interno para los que guardan todo tipo de fotos, vídeos o aplicaciones.",
+        "precio": "1667000",
+        "stock": "3",
+        "imagen": "/img/cels/Samsung-Galaxy-A52s.png"
+    },
+    {
+        "id": "6",
+        "nombre": "Samsung Galaxy S255",
+        "categoria": "samsung",
+        "descripcion":"smartphone potente con buena calidad en la cámara y con un gran almacenamiento interno para los que guardan todo tipo de fotos, vídeos o aplicaciones.",
+        "precio": "1667000",
+        "stock": 1,
+        "imagen": "/img/cels/samsung-galaxy-s22-1.png"
+    },
+    {
+        "id": "7",
+        "nombre": "Samsung Galaxy S22 Ultra",
+        "categoria": "samsung",
+        "descripcion":"smartphone potente con buena calidad en la cámara y con un gran almacenamiento interno para los que guardan todo tipo de fotos, vídeos o aplicaciones.",
+        "precio": "1667000",
+        "stock": 7,
+        "imagen": "/img/cels/samsung-galaxy-s22-ultra-1.png"
+    },
+    {   
+        "id": "8",
+        "nombre": "Vivo V20",
+        "categoria": "vivo",
+        "descripcion":"smartphone potente con buena calidad en la cámara y con un gran almacenamiento interno para los que guardan todo tipo de fotos, vídeos o aplicaciones.",
+        "precio": "1667000",
+        "stock": 7,
+        "imagen": "/img/cels/vivo-V20.png"
+    },
+    {
+        "id": "9",
+        "nombre": "Xiaomi 11T",
+        "categoria": "xiaomi",
+        "descripcion":"smartphone potente con buena calidad en la cámara y con un gran almacenamiento interno para los que guardan todo tipo de fotos, vídeos o aplicaciones.",
+        "precio": "1667000",
+        "stock": 7,
+        "imagen": "/img/cels/Xiaomi-11T.png"
+    },
+    {
+        "id": "10",
+        "nombre": "Xiaomi 12 Pro",
+        "categoria": "xiaomi",
+        "descripcion":"smartphone potente con buena calidad en la cámara y con un gran almacenamiento interno para los que guardan todo tipo de fotos, vídeos o aplicaciones.",
+        "precio": "1667000",
+        "stock": 7,
+        "imagen": "/img/cels/Xiaomi-12-Pro.png"
+    }
+]
