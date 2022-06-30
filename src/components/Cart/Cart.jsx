@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../contexts/CartContext';
+import { CartContext } from '../../contexts/CartContext';
 
 import './cart.css'
 

@@ -5,7 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import Cart from './components/Cart/Cart';
-import {CartContextProvider } from './components/contexts/CartContext';
+import {CartContextProvider } from './contexts/CartContext';
 import ItemCount from './components/ItemCount/ItemCount';
 
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
@@ -54,7 +54,7 @@ const App = () => {
           <Route path="/contacto" element={<div><h1>contacto</h1></div>} />
           <Route path="/cart" element={<Cart />} />
 
-          <Route path="*" element={<div><h1>La pagina no existe</h1></div>} />
+          <Route path="*" element={<div><h1 className='text-white text-center mt-5'>La pagina no existe</h1></div>} />
         </Routes>
       </BrowserRouter>
     </CartContextProvider>

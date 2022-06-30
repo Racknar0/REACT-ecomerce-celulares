@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useContext } from 'react';
 import { useNavigate } from "react-router-dom";
-import { CartContext } from '../contexts/CartContext';
+import { CartContext } from '../../contexts/CartContext';
 
 import { Roller } from 'react-awesome-spinners'
 
