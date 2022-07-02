@@ -7,7 +7,7 @@ export const CartContextProvider = ({children}) => {
     // Estados y funciones
     const [cart, setCart] = useState([])
     const [totalCart, setTotalCart] = useState(0)
-    //console.log(totalCart);
+    const [information, setInformation] = useState({})
 
 
     useEffect(() => {
@@ -43,6 +43,9 @@ export const CartContextProvider = ({children}) => {
         setTotalCart(0)
     }
 
+    const addInformation = (info) => {
+        setInformation(info)
+    }
 
 
 
@@ -55,6 +58,8 @@ export const CartContextProvider = ({children}) => {
             clearCart,
             totalCart,
             removeFromCart,
+            addInformation,
+            information
         }}
         >
             

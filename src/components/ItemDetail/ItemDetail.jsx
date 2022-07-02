@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { CartContext } from '../../contexts/CartContext';
 
 import { Roller } from 'react-awesome-spinners'
+import swal from 'sweetalert';
 
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css'

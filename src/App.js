@@ -13,10 +13,11 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import NavBar from './components/NavBar/NavBar'
 
 import "./App.css"
+import Registro from './components/Registro/Registro';
 
 const menu = {
   link1: 'Catálogo',
-  link2: 'Sistema de gestión',
+  link2: 'Registra tus datos',
   link3: 'Contáctanos',
 }
 
@@ -50,7 +51,7 @@ const App = () => {
 
 
           <Route path="/detalles/:id" element={<ItemDetailContainer objeto={itemSelected} setCantidadCarrrito={setCantidadCarrrito} />} />
-          <Route path="/gestion" element={<div><h1>gestion</h1></div>} />
+          <Route path="/gestion" element={<Registro/>} />
           <Route path="/contacto" element={<div><h1>contacto</h1></div>} />
           <Route path="/cart" element={<Cart />} />
 

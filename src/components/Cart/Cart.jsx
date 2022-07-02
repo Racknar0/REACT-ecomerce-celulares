@@ -3,28 +3,85 @@ import { useEffect } from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../contexts/CartContext';
+import { addDoc, collection, doc, getDoc, getDocs, getFirestore, query, updateDoc, where } from 'firebase/firestore/lite';
+import swal from 'sweetalert';
+
+
 
 import './cart.css'
 
 const Cart = () => {
-    const { cart, clearCart, removeFromCart } = useContext(CartContext);
+    const { cart, clearCart, removeFromCart, information } = useContext(CartContext);
     const [totalPrice, setTotalPrice] = React.useState(0);
+
     
     useEffect(() => {
         let total = cart.reduce((acc, item) => {
             return acc + parseInt(item.precio) * item.cantidad;
         } , 0);
         
-
+        
         setTotalPrice(total);
      } , [ cart ]);
 
+
+     const generarOrden  = () => {
+
+        console.log('Information', information );
+
+        if(Object.entries(information).length === 0) {
+            swal("Error", "Debes registrarte", "error");
+            return;
+        }
+
+
+        let orden = {}
+
+        orden.comprador = information
+        orden.total = totalPrice
+
+        orden.items = cart.map(item => {
+            const id = item.id;
+            const nombre = item.nombre;
+            const categoria = item.categoria;
+            const cantidad = item.cantidad;
+            const precio = item.precio * item.cantidad;
+
+            return {id, nombre, precio, categoria, cantidad}
+        })
+
+
+
+        const db = getFirestore();
+        const oderCollection = collection(db, 'ordenes');
+        addDoc(oderCollection, orden).then(resp => {
+            console.log('Orden creada');
+            swal('Orden realizada', `Gracias por comprar con nosotros tu orden de compra es ${ resp.id }`, 'success');
+        }).catch(err => console.log(err));
+
+
+        const updateStock = cart.map(item => {
+            const id = item.id;
+            const cantidad = item.cantidad;
+            const db = getFirestore();
+            const queryItem = doc(db, 'productos', id);
+            getDoc(queryItem)
+                .then((data) => {
+                    const stock = data.data().stock - cantidad;
+                    updateDoc(queryItem, {stock}).then(() => {
+                        console.log('Stock actualizado');
+
+                        clearCart();
+                    }).catch(err => console.log(err));
+            }).catch(err => console.log(err))})
+
+        }
 
     /* console.log(cart); */
 
     return cart.length > 0 ? (
         <div className="d-flex flex-column align-items-center">
-            <button className="btn botonPagar mt-3 mb-3">PAGAR</button>
+            <button className="btn botonPagar mt-3 mb-3" onClick={generarOrden}>PAGAR</button>
             <button
                 className="btn btn-danger botonLimpiar mt-3 mb-3"
                 onClick={clearCart}

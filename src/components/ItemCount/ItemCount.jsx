@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './itemCount.css';
+import swal from 'sweetalert';
 
 const ItemCount = ({ setCantidadCarrrito, comprando, count, setCount, onAdd, stock}) => {
 
@@ -31,6 +32,7 @@ const ItemCount = ({ setCantidadCarrrito, comprando, count, setCount, onAdd, sto
         setCantidadCarrrito(count);
         comprando();
         onAdd()
+        swal("Producto agregado al carrito", "", "success");
         //console.log(count);
     }
 
