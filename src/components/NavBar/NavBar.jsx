@@ -25,45 +25,122 @@ const NavBar = ({ menu, cantidadCarrrito }) => {
                         className="collapse navbar-collapse"
                         id="navbarTogglerDemo01"
                     >
-                        <Link className="navbar-brand d-flex justify-content-center align-items-center" to="/">
+                        <Link
+                            className="navbar-brand d-flex justify-content-center align-items-center"
+                            to="/"
+                        >
                             <p className="m-0 movi">
                                 Movi<span className="rack">Rack</span>
                             </p>
                         </Link>
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item d-flex justify-content-center align-items-center">
-                                <NavLink className={ ({isActive}) =>  isActive ? 'claseActive' : 'claseNoActive'} to="/">
+                                <NavLink
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? 'claseActive'
+                                            : 'claseNoActive'
+                                    }
+                                    to="/"
+                                >
                                     {link1}
                                 </NavLink>
                             </li>
                             <li className="nav-item d-flex justify-content-center align-items-center">
                                 <div className="dropdown">
-                                    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button
+                                        className="btn btn-secondary dropdown-toggle"
+                                        type="button"
+                                        id="dropdownMenuButton1"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
                                         Categorias
                                     </button>
-                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <li><Link className='dropdown-item' to="/categoria/samsung">Samsung</Link></li>
-                                        <li><Link className='dropdown-item' to="/categoria/xiaomi">Xiaomi</Link></li>
-                                        <li><Link className='dropdown-item' to="/categoria/apple">Apple</Link></li>
-                                        <li><Link className='dropdown-item' to="/categoria/motorola">Motorola</Link></li>
-                                        <li><Link className='dropdown-item' to="/categoria/oppo">Oppo</Link></li>
-                                        <li><Link className='dropdown-item' to="/categoria/vivo">Vivo</Link></li>
+                                    <ul
+                                        className="dropdown-menu"
+                                        aria-labelledby="dropdownMenuButton1"
+                                    >
+                                        <li>
+                                            <Link
+                                                className="dropdown-item"
+                                                to="/categoria/samsung"
+                                            >
+                                                Samsung
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                className="dropdown-item"
+                                                to="/categoria/xiaomi"
+                                            >
+                                                Xiaomi
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                className="dropdown-item"
+                                                to="/categoria/apple"
+                                            >
+                                                Apple
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                className="dropdown-item"
+                                                to="/categoria/motorola"
+                                            >
+                                                Motorola
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                className="dropdown-item"
+                                                to="/categoria/oppo"
+                                            >
+                                                Oppo
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                className="dropdown-item"
+                                                to="/categoria/vivo"
+                                            >
+                                                Vivo
+                                            </Link>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
                             <li className="nav-item d-flex justify-content-center align-items-center">
-                                <NavLink className={ ({isActive}) =>  isActive ? 'claseActive' : 'claseNoActive'} to="/gestion">
+                                <NavLink
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? 'claseActive'
+                                            : 'claseNoActive'
+                                    }
+                                    to="/gestion"
+                                >
                                     {link2}
                                 </NavLink>
                             </li>
                             <li className="nav-item d-flex justify-content-center align-items-center">
-                                <NavLink className={ ({isActive}) =>  isActive ? 'claseActive' : 'claseNoActive'} to="/contacto" >
+                                <NavLink
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? 'claseActive'
+                                            : 'claseNoActive'
+                                    }
+                                    to="/contacto"
+                                >
                                     {link3}
                                 </NavLink>
                             </li>
                             <li className="nav-item d-flex justify-content-center align-items-center">
-                                <Link to="/cart" >
-                                    <CartWidget cantidadCarrrito={cantidadCarrrito} />
+                                <Link to="/cart">
+                                    <CartWidget
+                                        cantidadCarrrito={cantidadCarrrito}
+                                    />
                                 </Link>
                             </li>
                         </ul>

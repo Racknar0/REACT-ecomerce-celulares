@@ -1,9 +1,9 @@
-.contenedor_I-Count{
+.contenedor_I-Count {
     max-width: 450px;
     height: 150px;
 }
 
-.input_cart{
+.input_cart {
     background-color: rgb(197, 197, 197) !important;
     border: none !important;
     text-align: center;
@@ -13,11 +13,11 @@
     border-radius: 0 !important;
 }
 
-.contenedor_counter{
+.contenedor_counter {
     border-radius: 10px;
 }
 
-.botones_control{
+.botones_control {
     width: 40px !important;
     height: 40px !important;
     padding: 0 !important;
@@ -27,11 +27,11 @@
     font-size: 20px;
 }
 
-.contenedor_boton_control{
+.contenedor_boton_control {
     width: 40px !important;
     height: 40px !important;
 }
 
-button{
+button {
     background-color: #9932cc !important;
 }

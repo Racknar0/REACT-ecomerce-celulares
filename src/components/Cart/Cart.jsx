@@ -27,8 +27,6 @@ const Cart = () => {
 
      const generarOrden  = () => {
 
-        console.log('Information', information );
-
         if(Object.entries(information).length === 0) {
             swal("Error", "Debes registrarte", "error");
             return;
@@ -55,7 +53,6 @@ const Cart = () => {
         const db = getFirestore();
         const oderCollection = collection(db, 'ordenes');
         addDoc(oderCollection, orden).then(resp => {
-            console.log('Orden creada');
             swal('Orden realizada', `Gracias por comprar con nosotros tu orden de compra es ${ resp.id }`, 'success');
         }).catch(err => console.log(err));
 
@@ -69,15 +66,12 @@ const Cart = () => {
                 .then((data) => {
                     const stock = data.data().stock - cantidad;
                     updateDoc(queryItem, {stock}).then(() => {
-                        console.log('Stock actualizado');
 
                         clearCart();
                     }).catch(err => console.log(err));
             }).catch(err => console.log(err))})
 
         }
-
-    /* console.log(cart); */
 
     return cart.length > 0 ? (
         <div className="d-flex flex-column align-items-center">

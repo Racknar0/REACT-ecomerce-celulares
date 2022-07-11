@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap');
 
-.movi{
+.movi {
     font-family: 'Passion One', cursive;
     font-size: 50px;
 }
 
-.rack{
+.rack {
     color: #9932cc;
 }
 
@@ -14,7 +14,7 @@
     margin-right: 1rem;
 } */
 
-.claseNoActive{
+.claseNoActive {
     font-family: 'Tiro Devanagari Sanskrit', serif;
     font-size: 25px;
     text-decoration: none;
@@ -22,20 +22,20 @@
     margin-right: 1rem;
 }
 
-.claseActive{
-   
+.claseActive {
+
     text-decoration: none;
     font-size: 25px;
     color: #9932cc !important;
     margin-right: 1rem;
 }
 
-.font:hover{
+.font:hover {
     color: #53cc32 !important;
 }
 
-.dropdown-toggle{
-    
+.dropdown-toggle {
+
     font-size: 25px;
     text-decoration: none;
     color: rgb(255, 255, 255) !important;
@@ -43,7 +43,7 @@
     background-color: #9932cc;
 }
 
-.navbarMain{
+.navbarMain {
     background-color: #000000;
     border-radius: 3px;
     padding: 15px 0px;

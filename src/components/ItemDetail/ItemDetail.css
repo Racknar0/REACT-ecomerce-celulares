@@ -1,13 +1,13 @@
-.imagen{
+.imagen {
     width: 300px;
 }
 
-.descripcion{
+.descripcion {
     font-weight: bold;
     font-size: 20px;
 }
 
-.bordes-card{
+.bordes-card {
     border: 2px solid #ccc;
     border-radius: 15px;
     padding: 10px;

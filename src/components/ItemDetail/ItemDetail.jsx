@@ -1,15 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { useContext } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../../contexts/CartContext';
 
-import { Roller } from 'react-awesome-spinners'
+import { Roller } from 'react-awesome-spinners';
 import swal from 'sweetalert';
 
 import ItemCount from '../ItemCount/ItemCount';
-import './ItemDetail.css'
-
-
+import './ItemDetail.css';
 
 const ItemDetail = ({ objeto, setCantidadCarrrito }) => {
     let navigate = useNavigate();
@@ -18,8 +16,6 @@ const ItemDetail = ({ objeto, setCantidadCarrrito }) => {
     const [count, setCount] = useState(1);
 
     const { nombre, descripcion, imagen, precio, stock } = objeto;
-
-    //console.log(cart)
 
     const [cargando, setCargando] = useState(true);
     setTimeout(() => {
@@ -36,27 +32,21 @@ const ItemDetail = ({ objeto, setCantidadCarrrito }) => {
         navigate('../cart');
     };
 
-   const onAdd = () => {
-      addToCart({
-        ...objeto,
-        cantidad: count
-      })
-
-   }
-   
-
+    const onAdd = () => {
+        addToCart({
+            ...objeto,
+            cantidad: count,
+        });
+    };
 
     return (
-        <div className='d-flex flex-column align-items-center'>
-            <h1 className="text-center mt-5 text-white">Detalles del producto</h1>
-            {cargando === true ? 
-            (
-                <Roller color={'#9932cc'}/>
-            ) 
-            
-            : 
-            
-            (
+        <div className="d-flex flex-column align-items-center">
+            <h1 className="text-center mt-5 text-white">
+                Detalles del producto
+            </h1>
+            {cargando === true ? (
+                <Roller color={'#9932cc'} />
+            ) : (
                 <div className="d-flex justify-content-center gap-5 row">
                     <div className="col-md-6 d-flex flex-column align-items-center bordes-card tajeta">
                         <h2>{nombre}</h2>
@@ -110,4 +100,4 @@ const ItemDetail = ({ objeto, setCantidadCarrrito }) => {
     );
 };
 
-export default ItemDetail
+export default ItemDetail;
